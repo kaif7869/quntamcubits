@@ -21,13 +21,13 @@ export default function Home() {
           <div className="relative grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="max-w-2xl">
               <span className="inline-flex rounded-full border border-cyan-300/20 bg-white/5 px-4 py-2 text-sm font-medium text-cyan-200 backdrop-blur-xl">
-                Futuristic software design for ambitious teams
+                IT company in Belgaum for ambitious teams
               </span>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mt-8 text-4xl font-semibold tracking-tight text-white sm:text-5xl xl:text-6xl">
-                Transforming Ideas Into Digital Reality
+                QuntamCubits: IT Company in Belgaum
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1 }} className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-                QuntamCubits builds powerful websites, scalable apps, and smart software solutions for modern businesses that want premium speed, security, and impact.
+                QuntamCubits builds powerful websites, scalable apps, AI chatbots, and smart software solutions for businesses in Belgaum, Belagavi, Karnataka, and beyond.
               </motion.p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow transition hover:scale-[1.02]">
