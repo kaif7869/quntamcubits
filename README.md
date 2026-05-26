@@ -16,6 +16,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Contact Form Email
+
+The contact form sends submissions to `quntamcubits@protonmail.com` through `/api/contact`.
+
+Set these environment variables locally and in your hosting provider:
+
+```bash
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_USER=sender@example.com
+SMTP_PASS=your-smtp-password
+SMTP_FROM="Quntam Cubits <sender@example.com>"
+CONTACT_TO_EMAIL=quntamcubits@protonmail.com
+```
+
+`CONTACT_TO_EMAIL` is optional because the app defaults to `quntamcubits@protonmail.com`.
+
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

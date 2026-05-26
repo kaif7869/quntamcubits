@@ -1,0 +1,18 @@
+▲ Next.js 16.2.6 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 23.4s
+  Running TypeScript ...
+Failed to type check.
+
+./app/components/ui/button.tsx:24:13
+Type error: 'href' is specified more than once, so this usage will be overwritten.
+
+  [90m22 |[0m   [36mif[0m ([32m"href"[0m [36min[0m props && [36mtypeof[0m props.href === [32m"string"[0m) {
+  [90m23 |[0m     [36mreturn[0m (
+[31m[1m>[0m [90m24 |[0m       <[33mLink[0m href={props.href} className={classes} {...props}>
+  [90m   |[0m             [31m[1m^[0m
+  [90m25 |[0m         {props.children}
+  [90m26 |[0m       </[33mLink[0m>
+  [90m27 |[0m     );
+Next.js build worker exited with code: 1 and signal: null
