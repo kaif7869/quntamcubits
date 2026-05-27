@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import { Footer } from "../components/ui/footer";
 import { Navbar } from "../components/ui/navbar";
 import { SectionHeading } from "../components/ui/section-heading";
 import { ServiceCard } from "../components/ui/service-card";
 import { services } from "../lib/data";
+
+export const metadata: Metadata = {
+  title: "Software Services in Belgaum",
+  description:
+    "Quntam Cubits offers website development, mobile app development, custom software, AI chatbot development, UI/UX design, and cloud solutions in Belgaum.",
+  alternates: {
+    canonical: "/services",
+  },
+};
 
 export default function ServicesPage() {
   return (

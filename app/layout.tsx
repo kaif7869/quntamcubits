@@ -2,17 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://quntamcubits.com";
+const siteName = "Quntam Cubits";
+const compactSiteName = "QuntamCubits";
+const logoUrl = `${siteUrl}/logo/companylogo1.png`;
 
 const businessSchema = {
   "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "ProfessionalService"],
-  name: "QuntamCubits",
-  alternateName: ["Quntam Cubits", "QuntamCubits IT Company"],
+  "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+  name: siteName,
+  alternateName: [compactSiteName, "Quntam Cubits IT Company", "QuntamCubits IT Company"],
   url: siteUrl,
-  logo: `${siteUrl}/logo/companylogo.png`,
-  image: `${siteUrl}/logo/companylogo.png`,
+  logo: logoUrl,
+  image: logoUrl,
   description:
-    "QuntamCubits is an IT company in Belgaum, Karnataka offering website development, mobile app development, custom software, AI chatbots, UI/UX design, and cloud solutions.",
+    "Quntam Cubits is an IT company in Belgaum, Karnataka offering website development, mobile app development, custom software, AI chatbots, UI/UX design, and cloud solutions.",
   email: "quntamcubits@protonmail.com",
   telephone: "+91 6362196902",
   address: {
@@ -23,7 +26,10 @@ const businessSchema = {
     addressCountry: "IN",
   },
   areaServed: ["Belgaum", "Belagavi", "Karnataka", "India"],
-  makesOffer: [
+  sameAs: [
+    "https://www.linkedin.com/in/mohammad-kaif-devalapur-948929222",
+  ],
+  knowsAbout: [
     "Website Development",
     "Mobile App Development",
     "Custom Software Development",
@@ -31,19 +37,45 @@ const businessSchema = {
     "UI/UX Design",
     "Cloud Solutions",
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Quntam Cubits software services",
+    itemListElement: [
+      "Website Development",
+      "Mobile App Development",
+      "Custom Software Development",
+      "AI Chatbot Development",
+      "UI/UX Design",
+      "Cloud Solutions",
+    ].map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service,
+      },
+    })),
+  },
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: siteName,
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
+  category: "Software development",
+  classification: "IT company, software development, web development, mobile app development",
   title: {
-    default: "QuntamCubits | IT Company in Belgaum",
-    template: "%s | QuntamCubits",
+    default: "Quntam Cubits | IT Company in Belgaum",
+    template: "%s | Quntam Cubits",
   },
   description:
-    "QuntamCubits is an IT company in Belgaum, Karnataka building websites, mobile apps, custom software, AI chatbots, UI/UX design, and cloud solutions.",
+    "Quntam Cubits is an IT company in Belgaum, Karnataka building websites, mobile apps, custom software, AI chatbots, UI/UX design, and cloud solutions.",
   keywords: [
-    "QuntamCubits",
     "Quntam Cubits",
+    "QuntamCubits",
+    "Quntam Cubits company",
+    "QuntamCubits company",
     "IT company in Belgaum",
     "software company in Belgaum",
     "website development in Belgaum",
@@ -58,25 +90,28 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
-    siteName: "QuntamCubits",
-    title: "QuntamCubits | IT Company in Belgaum",
+    siteName,
+    title: "Quntam Cubits | IT Company in Belgaum",
     description:
-      "Website development, mobile app development, custom software, AI chatbots, UI/UX design, and cloud solutions in Belgaum.",
+      "Quntam Cubits provides website development, mobile app development, custom software, AI chatbots, UI/UX design, and cloud solutions in Belgaum.",
     images: [
       {
-        url: "/logo/companylogo.png",
+        url: logoUrl,
         width: 1254,
         height: 1254,
-        alt: "QuntamCubits logo",
+        alt: "Quntam Cubits logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuntamCubits | IT Company in Belgaum",
+    title: "Quntam Cubits | IT Company in Belgaum",
     description:
-      "Modern websites, apps, AI chatbots, software, and cloud solutions by QuntamCubits in Belgaum.",
-    images: ["/logo/companylogo.png"],
+      "Modern websites, apps, AI chatbots, software, and cloud solutions by Quntam Cubits in Belgaum.",
+    images: [logoUrl],
+  },
+  verification: {
+    google: "googlea3419983a5ab9ed6.html",
   },
   robots: {
     index: true,

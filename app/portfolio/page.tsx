@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import { Footer } from "../components/ui/footer";
 import { Navbar } from "../components/ui/navbar";
 import { ProjectCard } from "../components/ui/project-card";
 import { SectionHeading } from "../components/ui/section-heading";
 import { projects } from "../lib/data";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Explore Quntam Cubits projects across websites, mobile apps, enterprise software, dashboards, ecommerce platforms, and AI products.",
+  alternates: {
+    canonical: "/portfolio",
+  },
+};
 
 export default function PortfolioPage() {
   return (

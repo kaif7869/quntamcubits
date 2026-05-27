@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { ContactForm } from "../components/ui/contact-form";
 import { Footer } from "../components/ui/footer";
 import { Navbar } from "../components/ui/navbar";
 import { SectionHeading } from "../components/ui/section-heading";
+
+export const metadata: Metadata = {
+  title: "Contact Quntam Cubits",
+  description:
+    "Contact Quntam Cubits in Belgaum for website development, mobile apps, custom software, AI chatbot development, UI/UX design, and cloud projects.",
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function ContactPage() {
   return (

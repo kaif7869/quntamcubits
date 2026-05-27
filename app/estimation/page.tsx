@@ -1,8 +1,18 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { EstimateBuilder } from "../components/estimation/estimate-builder";
 import { Footer } from "../components/ui/footer";
 import { Navbar } from "../components/ui/navbar";
 import { SectionHeading } from "../components/ui/section-heading";
+
+export const metadata: Metadata = {
+  title: "Project Estimation",
+  description:
+    "Estimate a website, mobile app, software, chatbot, UI/UX, or cloud project with Quntam Cubits before requesting a final quote.",
+  alternates: {
+    canonical: "/estimation",
+  },
+};
 
 type EstimationPageProps = {
   searchParams: Promise<{

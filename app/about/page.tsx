@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import { Footer } from "../components/ui/footer";
 import { Navbar } from "../components/ui/navbar";
 import { SectionHeading } from "../components/ui/section-heading";
 import { StatsCounter } from "../components/ui/stats-counter";
+
+export const metadata: Metadata = {
+  title: "About Quntam Cubits",
+  description:
+    "Learn about Quntam Cubits, a Belgaum-based IT company creating websites, mobile apps, custom software, AI chatbots, and cloud-ready digital products.",
+  alternates: {
+    canonical: "/about",
+  },
+};
 
 export default function AboutPage() {
   return (
