@@ -46,7 +46,7 @@ export function Footer() {
       </div>
 
       <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} QuntamCubits. Crafted for modern product teams.
+        © {new Date().getFullYear()} Copyright (All rights are Reserved by ) QuntamCubits. Crafted for modern product teams.
       </div>
     </footer>
   );

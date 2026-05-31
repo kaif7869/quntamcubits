@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { BadgeCheck, CheckCircle2, Clock3, FileText, Headphones, ShieldCheck } from "lucide-react";
 import { ContactForm } from "./components/ui/contact-form";
 import { Footer } from "./components/ui/footer";
 import { Navbar } from "./components/ui/navbar";
@@ -10,6 +11,38 @@ import { SectionHeading } from "./components/ui/section-heading";
 import { ServiceCard } from "./components/ui/service-card";
 import { TestimonialCarousel } from "./components/ui/testimonial-carousel";
 import { pricingPlans, projects, services } from "./lib/data";
+
+const trustSignals = [
+  {
+    title: "Clear scope before payment",
+    description: "Every website, app, or software project starts with a written scope, timeline, deliverables, and pricing so expectations are clear.",
+    icon: FileText,
+  },
+  {
+    title: "Progress you can see",
+    description: "You get regular previews, milestone updates, and direct communication instead of waiting blindly until the final delivery.",
+    icon: Clock3,
+  },
+  {
+    title: "Secure development practices",
+    description: "We build with clean code, protected forms, reliable hosting, backup planning, and production-ready deployment checks.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Post-launch support",
+    description: "After launch, we help with fixes, updates, improvements, and handover so your product keeps working smoothly.",
+    icon: Headphones,
+  },
+];
+
+const clientPromises = [
+  "Written proposal with deliverables, timeline, and cost",
+  "Mobile responsive design for every website and web app",
+  "Admin, dashboard, or CMS guidance when your project needs it",
+  "Testing before launch on important screens and user flows",
+  "SEO basics, speed checks, and Google-ready technical setup",
+  "Training or handover so you can confidently use the product",
+];
 
 export default function Home() {
   return (
@@ -27,7 +60,7 @@ export default function Home() {
                 QuntamCubits: IT Company in Belgaum
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1 }} className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
-                QuntamCubits builds powerful websites, scalable apps, AI chatbots, and smart software solutions for businesses in Belgaum, Belagavi, Karnataka, and beyond.
+                QuntamCubits builds trustworthy websites, mobile apps, AI chatbots, and custom software with clear pricing, regular updates, secure development, and post-launch support.
               </motion.p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <a href="/contact" className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow transition hover:scale-[1.02]">
@@ -50,6 +83,14 @@ export default function Home() {
                   <p className="text-3xl font-semibold text-white">99%</p>
                   <p className="mt-2 text-sm text-slate-400">Client satisfaction</p>
                 </div>
+              </div>
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {["Written project scope", "Direct developer communication", "Launch and support included", "Belgaum-based IT partner"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200">
+                    <BadgeCheck className="h-4 w-4 shrink-0 text-cyan-300" />
+                    <span>{item}</span>
+                  </div>
+                ))}
               </div>
             </div>
             <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9 }} className="relative isolate overflow-hidden rounded-[2.5rem] border border-white/10 bg-slate-950/80 p-8 shadow-card backdrop-blur-xl sm:p-10">
@@ -92,6 +133,29 @@ export default function Home() {
 
         <section className="space-y-10">
           <SectionHeading
+            subtitle="Trust"
+            title="A safer way to build your website, app, or software"
+            description="Hiring a development company is a big decision. We make the process clear from the first conversation so you know what will be built, how long it will take, and how your business will use it after launch."
+          />
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {trustSignals.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div key={item.title} whileHover={{ y: -6 }} className="rounded-[2rem] border border-white/10 bg-slate-950/75 p-6 shadow-card backdrop-blur-xl">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="space-y-10">
+          <SectionHeading
             subtitle="Services"
             title="Premium digital services for modern products"
             description="Glassmorphism cards, animated accents, and service modules built for the next generation of SaaS and enterprise solutions."
@@ -124,8 +188,8 @@ export default function Home() {
         <section className="space-y-10">
           <SectionHeading
             subtitle="Process"
-            title="Our development rhythm from concept to launch"
-            description="A step-by-step journey with thoughtful planning, design, engineering, testing, and long-term support."
+            title="A transparent process from first call to launch"
+            description="You always know the current stage of your project, what is pending, and what we need from you to move forward."
           />
           <div className="grid gap-6 lg:grid-cols-3">
             {[
@@ -144,6 +208,27 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div className="rounded-[2.5rem] border border-white/10 bg-slate-950/80 p-8 shadow-card backdrop-blur-xl">
+            <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">Commitments</p>
+            <h2 className="mt-4 text-3xl font-semibold text-white">What you receive when you choose QuntamCubits</h2>
+            <p className="mt-5 text-sm leading-7 text-slate-300">
+              We focus on the details that help a business owner feel confident: documentation, communication, testing, launch support, and practical guidance after delivery.
+            </p>
+            <a href="/contact" className="mt-8 inline-flex items-center justify-center rounded-full bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400/20">
+              Discuss your project
+            </a>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {clientPromises.map((promise) => (
+              <div key={promise} className="flex gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-5 text-slate-200 backdrop-blur-xl">
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-300" />
+                <p className="text-sm leading-7">{promise}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-8">
             <SectionHeading
@@ -154,8 +239,8 @@ export default function Home() {
             <TestimonialCarousel />
           </div>
           <div className="rounded-[2.5rem] border border-white/10 bg-slate-950/80 p-8 shadow-card backdrop-blur-xl">
-            <h3 className="text-2xl font-semibold text-white">Ready to build a breakthrough product?</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-300">Tell us about your project, and we’ll map the fastest path from idea to launch.</p>
+            <h3 className="text-2xl font-semibold text-white">Ready to build with confidence?</h3>
+            <p className="mt-4 text-sm leading-7 text-slate-300">Tell us about your project, and we will map the scope, timeline, features, budget, and support plan before development starts.</p>
             <a href="/contact" className="mt-8 inline-flex items-center justify-center rounded-full bg-cyan-400/10 px-6 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-400/20">
               Start a project
             </a>
