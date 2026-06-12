@@ -7,7 +7,6 @@ export function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const contactEmail = "quntamcubits@protonmail.com";
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [event.target.name]: event.target.value });
@@ -22,24 +21,22 @@ export function ContactForm() {
     setStatus("sending");
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${contactEmail}`, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
         },
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          phone: form.phone || "Not provided",
+          phone: form.phone,
           message: form.message,
-          _subject: `New contact request from ${form.name}`,
-          _template: "table",
         }),
       });
 
+      const data = (await response.json().catch(() => null)) as { error?: string } | null;
+
       if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as { error?: string } | null;
         throw new Error(data?.error || "Could not send the request. Please try again.");
       }
 

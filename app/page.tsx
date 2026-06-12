@@ -57,7 +57,7 @@ export default function Home() {
                 IT company in Belgaum for ambitious teams
               </span>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="mt-8 text-4xl font-semibold tracking-tight text-white sm:text-5xl xl:text-6xl">
-                QuntamCubits: IT Company in Belgaum
+                QuntamCubits
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1 }} className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
                 QuntamCubits builds trustworthy websites, mobile apps, AI chatbots, and custom software with clear pricing, regular updates, secure development, and post-launch support.
