@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   category: "Software development",
   classification: "IT company, software development, web development, mobile app development",
   title: {
-    default: "Quntam Cubits | IT Company in Belgaum",
+    default: "Quntam Cubits Tech Solutions",
     template: "%s | Quntam Cubits",
   },
   description:
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: siteUrl,
     siteName,
-    title: "Quntam Cubits | IT Company in Belgaum",
+    title: "Quntam Cubits Tech Solutions",
     description:
       "Quntam Cubits provides website development, mobile app development, custom software, AI chatbots, UI/UX design, and cloud solutions in Belgaum.",
     images: [
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quntam Cubits | IT Company in Belgaum",
+    title: "Quntam Cubits Tech Solutions",
     description:
       "Modern websites, apps, AI chatbots, software, and cloud solutions by Quntam Cubits in Belgaum.",
     images: [logoUrl],
