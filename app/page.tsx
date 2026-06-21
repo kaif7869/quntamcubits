@@ -142,8 +142,8 @@ export default function Home() {
               const Icon = item.icon;
 
               return (
-                <motion.div key={item.title} whileHover={{ y: -6 }} className="rounded-[2rem] border border-white/10 bg-slate-950/75 p-6 shadow-card backdrop-blur-xl">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
+                <motion.div key={item.title} whileHover={{ y: -6 }} className="trust-card rounded-[2rem] border border-white/10 bg-slate-950/75 p-6 shadow-card backdrop-blur-xl">
+                  <div className="trust-card-icon inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-400/10 text-cyan-300">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold text-white">{item.title}</h3>

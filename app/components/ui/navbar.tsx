@@ -3,12 +3,15 @@
 import { ArrowRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navLinks } from "../../lib/data";
+import { cn } from "../../lib/utils";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
@@ -28,11 +31,24 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm text-slate-300 transition hover:text-white">
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={cn(
+                  "relative py-2 text-sm font-medium text-slate-300 transition hover:text-white",
+                  "after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-center after:scale-x-0 after:rounded-full after:bg-cyan-300 after:transition-transform",
+                  isActive && "text-cyan-300 after:scale-x-100"
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
@@ -56,11 +72,24 @@ export function Navbar() {
       {open ? (
         <div className="border-t border-white/10 bg-slate-950/95 px-5 py-5 md:hidden">
           <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="rounded-2xl border border-white/5 bg-white/5 px-4 py-3 text-base text-slate-200 transition hover:bg-white/10" onClick={() => setOpen(false)}>
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "rounded-2xl border border-white/5 bg-white/5 px-4 py-3 text-base text-slate-200 transition hover:bg-white/10",
+                    isActive && "border-cyan-300/30 bg-cyan-400/10 text-cyan-300"
+                  )}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <ThemeToggle />
           </div>
         </div>
